@@ -1,21 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
     <!-- CSS Eksternal -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css\style.css">
+
+    <!-- Tailwind CSS CDN -->
+     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
 </head>
+
 <body>
-    <header></header>
+    <header class="main-header p-2">
+        <!-- Logo -->
+        <div class="Logo"></div>
 
-    <main></main>
 
-    <footer></footer>
+        <!-- Navigation Menu -->
+        <nav class="flex">
+            <a class="border rounded p-2" href="#home-page">Home</a>
+            <a class="border rounded p-2" href="#our-profile-page">Our Profile</a>
+            <a class="border rounded p-2" href="#portofolio-page">Portofolio</a>
+            <a class="border rounded p-2" href="#massage-us-page">Massage Us</a>
+        </nav>
+
+    </header>
+
+    <hr>
+
+    <main>
+        <!-- Home Page -->
+        <saction id="home-page" class="min-h-[500px] flex flex-col items-center justify-center text-center">
+            <h2 class="text-xl font-bold" id="welcome-speech">Welcome to Our Website</h2>
+            <p class="mt-2">We are glad to have here. Explore our services and offerings.</p>
+        </saction>
+
+        <hr>
+
+        <!-- Our Profile Page -->
+        <saction id="our-profile-page" class="min-h-[500px] flex flex-col items-center justify-center text-center">
+            <h2 class="text-xl font-bold">About Rizki Website</h2>
+            <p class="mt-2">Riki Company is dedicated to providing top-notch services in various domains.</p>
+        </saction>
+
+        <hr>
+
+        <!-- Portofoli Page -->
+        <saction id="portofolio-page" class="min-h-[500px] flex flex-col items-center justify-center text-center">
+            <h2 class="text-xl font-bold">Our Portofolio</h2>
+            <p class="mt-2">Take a look at our diverse range of projects that showcase our skills and expertise.</p>
+        </saction>
+    </main>
+
+    <hr>
+
+    <footer>
+        Created By Rizki
+    </footer>
 
     <!-- JS Eksternal -->
     <script src="js/script.js"></script>
 </body>
+
 </html>
