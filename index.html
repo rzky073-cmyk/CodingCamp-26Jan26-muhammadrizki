@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="css\style.css">
 
     <!-- Tailwind CSS CDN -->
-     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
 </head>
 
@@ -23,9 +23,8 @@
         <!-- Navigation Menu -->
         <nav class="flex">
             <a class="border rounded p-2" href="#home-page">Home</a>
-            <a class="border rounded p-2" href="#our-profile-page">Our Profile</a>
-            <a class="border rounded p-2" href="#portofolio-page">Portofolio</a>
-            <a class="border rounded p-2" href="#massage-us-page">Massage Us</a>
+            <a class="border rounded p-2" href="#my-profile-page">My Profile</a>
+            <a class="border rounded p-2" href="#message-me-page">Massage Me</a>
         </nav>
 
     </header>
@@ -35,35 +34,107 @@
     <main>
         <!-- Home Page -->
         <saction id="home-page" class="min-h-[500px] flex flex-col items-center justify-center text-center">
-            <h2 class="text-xl font-bold" id="welcome-speech">Welcome to Our Website</h2>
-            <p class="mt-2">We are glad to have here. Explore our services and offerings.</p>
+            <h2 class="text-xl font-bold" id="welcome-speech">Welcome to My Website</h2>
+            <p class="mt-2">Saya sedang belajar web development dan membangun website sederhana sebagai
+                bagian dari latihan coding.</p>
         </saction>
 
         <hr>
 
-        <!-- Our Profile Page -->
-        <saction id="our-profile-page" class="min-h-[500px] flex flex-col items-center justify-center text-center">
-            <h2 class="text-xl font-bold">About Rizki Website</h2>
+        <!-- My Profile Page -->
+        <saction id="my-profile-page" class="min-h-[500px] flex flex-col items-center justify-center text-center">
+            <h2 class="text-xl font-bold">About Me</h2>
             <p class="mt-2">Riki Company is dedicated to providing top-notch services in various domains.</p>
         </saction>
 
         <hr>
 
-        <!-- Portofoli Page -->
-        <saction id="portofolio-page" class="min-h-[500px] flex flex-col items-center justify-center text-center">
-            <h2 class="text-xl font-bold">Our Portofolio</h2>
-            <p class="mt-2">Take a look at our diverse range of projects that showcase our skills and expertise.</p>
-        </saction>
-    </main>
+        <!-- Message Me -->
+        <main id="message-me-page" class="p-10">
 
-    <hr>
+            <h2 class="text-xl font-bold mb-6">Message Us</h2>
 
-    <footer>
-        Created By Rizki
-    </footer>
+            <!-- WRAPPER 2 KOLOM -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
 
-    <!-- JS Eksternal -->
-    <script src="js/script.js"></script>
+                <!-- FORM KIRI -->
+                <form id="messageMe" class="grid grid-cols-[140px_1fr] gap-y-4 gap-x-4">
+
+                    <label>Nama</label>
+                    <input id="nama" type="text" class="border p-2 w-full">
+
+                    <label>Tanggal Lahir</label>
+                    <input id="tanggal" type="date" class="border p-2 w-full">
+
+                    <label>Jenis Kelamin</label>
+                    <div class="flex gap-4">
+                        <label class="flex items-center gap-1">
+                            <input type="radio" name="jk" value="Laki-Laki" checked> Laki-Laki
+                        </label>
+                        <label class="flex items-center gap-1">
+                            <input type="radio" name="jk" value="Perempuan"> Perempuan
+                        </label>
+                    </div>
+
+                    <label>Pesan</label>
+                    <textarea id="pesan" class="border p-2 h-28"></textarea>
+
+                    <div></div>
+                    <button type="submit" class="border px-6 py-2 w-fit">
+                        Submit
+                    </button>
+                </form>
+
+                <!-- OUTPUT KANAN -->
+                <div class="border p-6">
+                    <p class="mb-4 font-semibold">
+                        Current time :
+                        <span id="currentTime"></span>
+                    </p>
+
+                    <p id="outNama"></p>
+                    <p id="outTanggal"></p>
+                    <p id="outJK"></p>
+                    <p id="outPesan"></p>
+                </div>
+
+            </div>
+        </main>
+
+        <script>
+            function updateTime() {
+                document.getElementById("currentTime").innerText =
+                    new Date().toString();
+            }
+            updateTime();
+
+            document.getElementById("messageMe").addEventListener("submit", function (e) {
+                e.preventDefault();
+
+                const nama = document.getElementById("nama").value;
+                const tanggal = document.getElementById("tanggal").value;
+                const pesan = document.getElementById("pesan").value;
+                const jk = document.querySelector('input[name="jk"]:checked').value;
+
+                document.getElementById("outNama").innerText = "Nama : " + nama;
+                document.getElementById("outTanggal").innerText = "Tanggal Lahir : " + tanggal;
+                document.getElementById("outJK").innerText = "Jenis Kelamin : " + jk;
+                document.getElementById("outPesan").innerText = "Pesan : " + pesan;
+
+                updateTime();
+            });
+        </script>
+
+
+
+
+
+        <footer>
+            Created By Rizki
+        </footer>
+
+        <!-- JS Eksternal -->
+        <script src="js/script.js"></script>
 </body>
 
 </html>
